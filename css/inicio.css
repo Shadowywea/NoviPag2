@@ -90,7 +90,7 @@ body, html {
 .album-scroll {
   display: flex;
   flex-direction: column;
-  gap: 48rem;
+  gap: 30rem;
   padding: 5vh 0;
   align-items: center; 
   overflow: hidden;
