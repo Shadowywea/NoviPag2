@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const cursorImage = new Image();
-    cursorImage.src = 'img/cursor.cur';
+    cursorImage.src = '../img/cursor.cur';
     
     cursorImage.onerror = function() {
         console.error('Error: No se pudo cargar el cursor.cur');
