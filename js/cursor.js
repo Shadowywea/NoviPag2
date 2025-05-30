@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.album, a').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 clearInterval(glitchInterval);
-                document.body.style.cursor = 'url("../img/cursor.cur") 16 16, pointer';
+                document.body.style.cursor = 'url(../img/cursor.cur) 16 16, pointer';
             });
             
             el.addEventListener('mouseleave', () => {
