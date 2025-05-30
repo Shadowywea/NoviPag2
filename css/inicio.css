@@ -18,7 +18,7 @@ body, html {
 .contenedor-heridas {
   position: relative;
   min-height: 100vh;
-  background: url('/img/herida.jpg') center/cover no-repeat fixed;
+  background: url('../img/herida.jpg') center/cover no-repeat fixed;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -144,10 +144,10 @@ body, html {
 
 /* cursor */
 body {
-  cursor: url('img/cursor.cur'), auto;
+  cursor: url('/..img/cursor.cur'), auto;
 }
 .album, a {
-  cursor: url('img/cursor.cur'), pointer;
+  cursor: url('../img/cursor.cur'), pointer;
 }
 
 /* responsive */
