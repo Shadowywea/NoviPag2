@@ -1,0 +1,169 @@
+:root {
+  --neon-red: #ff0040;
+  --neon-blue: #00ccff;
+  --bg-dark: #000;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Share Tech Mono', monospace;
+  background: var(--bg-dark);
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+/* ===== fondo y efectos ===== */
+.contenedor-heridas {
+  position: relative;
+  min-height: 100vh;
+  background: url('/img/herida.jpg') center/cover no-repeat fixed;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  padding: 10vh 0;
+  animation: 
+    palpitar 6s ease-in-out infinite,
+    glitch-distortion 10s linear infinite;
+}
+
+
+
+/* interferencias y scanlines */
+.contenedor-heridas::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 1px,
+    rgba(0, 255, 255, 0.1) 2px,
+    rgba(0, 255, 255, 0.1) 3px,
+    transparent 4px
+  );
+  animation: scanlines 0.1s linear infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.contenedor-heridas::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to bottom, rgba(0,255,255,0.5), transparent);
+  animation: crt-scan 4s linear infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes scanlines {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+@keyframes crt-scan {
+  0% { top: -5px; opacity: 0.8; }
+  50% { opacity: 0.2; }
+  100% { top: 100%; opacity: 0.8; }
+}
+
+/* sangre pulsante */
+.contenedor-heridas::before {
+  background: radial-gradient(circle, var(--neon-red) 0%, transparent 70%);
+  opacity: 0;
+  animation: blood-pulse 4s ease infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes blood-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+/*===== scroll =====*/
+.album-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 59rem;
+  padding: 5vh 0;
+  align-items: center; 
+  overflow: hidden;
+}
+
+
+.album {
+  flex: 0 0 auto;
+  width: 20vmin;
+  height: 20vmin;
+  transform: translateY(0);
+  transition: transform 0.3s ease, filter 0.4s ease;
+  z-index: 1;
+  cursor: url('/img/cursor.cur'), pointer;
+}
+
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--neon-red);
+  filter: grayscale(30%);
+  transition: inherit;
+}
+
+.album.oculto img {
+  opacity: 0;
+  filter: grayscale(100%) blur(5px);
+}
+
+.album.oculto:hover img {
+  opacity: 1;
+  filter: grayscale(0) blur(0);
+}
+
+.album:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0);
+  box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+}
+
+.album::after {
+  content: attr(data-title);
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  text-shadow: 0 0 5px var(--neon-red);
+}
+
+/* cursor */
+body {
+  cursor: url('/img/cursor.cur'), auto;
+}
+.album, a {
+  cursor: url('/img/cursor.cur'), pointer;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .album {
+    width: 25vmin;
+    height: 25vmin;
+  }
+
+  .contenedor-heridas {
+    gap: 7vh;
+    padding: 15vh 0;
+  }
+
+  .contenedor-heridas::before {
+    animation: none;
+  }
+}
+
