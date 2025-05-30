@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const cursorImage = new Image();
-    cursorImage.src = 'img/cursor.cur';
+    cursorImage.src = '../img/cursor.cur';
     
     cursorImage.onerror = function() {
         console.error('Error: No se pudo cargar el cursor.cur');
@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     cursorImage.onload = function() {
      
         const cursorStates = [
-            'url("img/cursor.cur") 16 16, auto',
-            'url("img/cursor.cur") 18 18, auto',
+            'url("../img/cursor.cur") 16 16, auto',
+            'url("../img/cursor.cur") 18 18, auto',
             'none',
-            'url("img/cursor.cur") 14 14, auto',
-            'url("img/cursor.cur") 16 20, auto'
+            'url("../img/cursor.cur") 14 14, auto',
+            'url("../img/cursor.cur") 16 20, auto'
         ];
 
         let currentState = 0;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.album, a').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 clearInterval(glitchInterval);
-                document.body.style.cursor = 'url("img/cursor.cur") 16 16, pointer';
+                document.body.style.cursor = 'url("../img/cursor.cur") 16 16, pointer';
             });
             
             el.addEventListener('mouseleave', () => {

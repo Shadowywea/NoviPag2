@@ -104,7 +104,7 @@ body, html {
   transform: translateY(0);
   transition: transform 0.3s ease, filter 0.4s ease;
   z-index: 1;
-  cursor: url('img/cursor.cur'), pointer;
+  cursor: url('../img/cursor.cur'), pointer;
 }
 
 .album img {
@@ -144,7 +144,7 @@ body, html {
 
 /* cursor */
 body {
-  cursor: url('/..img/cursor.cur'), auto;
+  cursor: url('../img/cursor.cur'), auto;
 }
 .album, a {
   cursor: url('../img/cursor.cur'), pointer;
