@@ -18,7 +18,7 @@ body, html {
 .contenedor-heridas {
   position: relative;
   min-height: 100vh;
-  background: url('img/herida.jpg') center/cover no-repeat fixed;
+  background: url('//img/herida.jpg') center/cover no-repeat fixed;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
