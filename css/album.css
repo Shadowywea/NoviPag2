@@ -113,7 +113,7 @@ body::after {
 /* Información del álbum */
 .album-info h1 {
   color: var(--neon-red);
-  font-size: 4rem;
+  font-size: 9rem;
   margin: 2rem 0;
   text-shadow: 0 0 10px var(--neon-red);
   text-align: center;
