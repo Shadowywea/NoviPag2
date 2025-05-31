@@ -48,7 +48,7 @@ body::after {
   position: fixed;
   top: 20px;
   left: 20px;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: 'Share Tech Mono', monospace;
   color: var(--neon-red);
   background-color: rgba(0, 0, 0, 0.6);
