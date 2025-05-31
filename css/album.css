@@ -73,7 +73,7 @@ body::after {
 /* Contenedor del álbum */
 .album-container {
   width: 100%;
-  max-width: 300px;
+  max-width: 900px;
   margin: 4rem auto;
   padding: 2rem;
   border: 1px solid var(--neon-red);
