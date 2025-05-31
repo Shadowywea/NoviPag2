@@ -94,7 +94,7 @@ body::after {
 
 .album-info h1 {
   color: var(--neon-red);
-  font-size: 10rem;
+  font-size: 4rem;
   margin: 2rem 0;
   text-shadow: 0 0 10px var(--neon-red);
   text-align: center;
@@ -115,7 +115,7 @@ body::after {
 
 .album-info a {
   font-family: 'VT323', monospace;
-  font-size: 5rem;
+  font-size: 2rem;
   color: white;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -135,7 +135,7 @@ body::after {
   }
 
   .album-info h1 {
-    font-size: 5rem;
+    font-size: 2rem;
   }
 
   .album-info a {
@@ -147,7 +147,7 @@ body::after {
   position: fixed;
   top: 20px;
   left: 20px;
-  font-size: 9rem;
+  font-size: 2rem;
   font-family: 'Share Tech Mono', monospace;
   color: var(--neon-red);
   background-color: rgba(0, 0, 0, 0.6);
