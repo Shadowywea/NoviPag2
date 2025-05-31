@@ -100,7 +100,7 @@ body::after {
 
 /* Imagen de portada */
 .album-cover img {
-  width: 100%;
+  width: 90%;
   border: 2px solid var(--neon-red);
   transition: all 0.3s;
   filter: grayscale(30%) contrast(1.2);
