@@ -18,12 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes bgFlicker {
-  0% { background-color: #0a0a0a; }
-  50% { background-color: #000; }
-  100% { background-color: #0a0a0a; }
-}
-
 /* Glitch Scanline Overlay */
 body::after {
   content: "";
@@ -43,17 +37,40 @@ body::after {
   z-index: 9999;
 }
 
+@keyframes bgFlicker {
+  0% { background-color: #0a0a0a; }
+  50% { background-color: #000; }
+  100% { background-color: #0a0a0a; }
+}
+
+/* Botón Home */
 .home-button {
-  position: sticky;
+  position: fixed;
   top: 20px;
   left: 20px;
+  font-size: 2rem;
+  font-family: 'Share Tech Mono', monospace;
   color: var(--neon-red);
-  font-size: 1rem;
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--neon-red);
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
   text-decoration: none;
+  z-index: 100;
+  box-shadow: 0 0 10px var(--neon-red);
+  transition: all 0.3s ease-in-out;
   text-shadow: 0 0 5px var(--neon-red);
 }
 
+.home-button:hover {
+  background-color: var(--neon-red);
+  color: black;
+  box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+  transform: scale(1.05);
+  text-shadow: none;
+}
+
+/* Contenedor del álbum */
 .album-container {
   max-width: 100px;
   margin: 4rem auto;
@@ -80,6 +97,7 @@ body::after {
   pointer-events: none;
 }
 
+/* Imagen de portada */
 .album-cover img {
   width: 100%;
   border: 2px solid var(--neon-red);
@@ -92,6 +110,7 @@ body::after {
   filter: grayscale(10%) brightness(1.1);
 }
 
+/* Información del álbum */
 .album-info h1 {
   color: var(--neon-red);
   font-size: 4rem;
@@ -127,47 +146,7 @@ body::after {
   letter-spacing: 1px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .album-container {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  .album-info h1 {
-    font-size: 2rem;
-  }
-
-  .album-info a {
-    font-size: 1.8rem;
-  }
-}
-
-.home-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 2rem;
-  font-family: 'Share Tech Mono', monospace;
-  color: var(--neon-red);
-  background-color: rgba(0, 0, 0, 0.6);
-  border: 2px solid var(--neon-red);
-  border-radius: 8px;
-  padding: 0.3rem 0.8rem;
-  text-decoration: none;
-  z-index: 100;
-  box-shadow: 0 0 10px var(--neon-red);
-  transition: all 0.3s ease-in-out;
-}
-
-.home-button:hover {
-  background-color: var(--neon-red);
-  color: black;
-  box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
-  transform: scale(1.05);
-  text-shadow: none;
-}
-
+/* Reproductor de SoundCloud */
 .soundcloud-player {
   margin: 1.5rem 0;
   border-radius: 10px;
@@ -185,7 +164,23 @@ body::after {
 
 .track h3 {
   margin-bottom: 0.5rem;
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: #ff3c70;
   text-shadow: 0 0 5px black;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .album-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .album-info h1 {
+    font-size: 2rem;
+  }
+
+  .album-info a {
+    font-size: 1.8rem;
+  }
 }
