@@ -127,7 +127,7 @@ body::after {
 
 .album-info li {
   margin: 2rem 0;
-  padding-left: 1rem;
+  padding-left: 2rem;
   border-bottom: 1px dashed var(--neon-red);
   padding-bottom: 1rem;
   position: relative;
